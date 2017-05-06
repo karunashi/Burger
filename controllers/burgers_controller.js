@@ -17,11 +17,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  burgers.insertOne([
-    "name", "consumed"
-  ], [
-    req.body.name, req.body.consumed
-  ], function() {
+  burgers.insertOne(req.body.name, function() {
     res.redirect("/");
   });
 });
@@ -31,9 +27,7 @@ router.put("/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  burgers.updateOne({
-    consumed: req.body.consumed
-  }, condition, function() {
+  burgers.updateOne(req.params.id, function() {
     res.redirect("/");
   });
 });

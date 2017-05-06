@@ -7,6 +7,7 @@
     {{#unless this.consumed}}
       <li>
         {{this.name}}
+        <form action="/{{id}}?_method=PUT" method="POST"><button>Test</button></form>
       </li>
     {{/unless}}
   {{/each}}
