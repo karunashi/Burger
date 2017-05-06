@@ -1,0 +1,25 @@
+<h1>Evolution - Symbiotic Link Established. New. Enhanced. Improved.</h1>
+
+<h2>Unacquired Biomass</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless this.consumed}}
+      <li>
+        {{this.name}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Acquired Biomass</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if this.consumed}}
+      <li>
+        {{this.name}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
